@@ -25,6 +25,7 @@ namespace mastermindclone
         private static bool CodeNotguessed = true; //  checks if the secret code has NOT been guessed yet and is set to true (not guessed yet) at the start
         private static string Exitgame; // to see when the user types "exit"
         
+        
         static void Main(string[] args)
         {
             mastermindclone game = new mastermindclone();
@@ -40,8 +41,6 @@ namespace mastermindclone
                 game.Gameplay(); // calling "Gameplay"
             }                   
         }
-
-
         private string FirstInput()
         {
             PlayerInput = ""; // input is nothing at start
@@ -69,7 +68,6 @@ namespace mastermindclone
                 playgame = true; // setting the boolean playgame to true if the user has typed play
             }                          
         }
-
         private void Gameplay()
         {           
             { 
@@ -107,7 +105,7 @@ namespace mastermindclone
                         }
                     }
                 }
-                if (Mvalid = true && Nvalid == true && randomise == false && CodeNotguessed == true)
+                if (Mvalid = true && Nvalid == true && randomise == false && CodeNotguessed == true) 
                 {
                     stored = new int[N]; // declaring the "stored" array
                     Random rand = new Random(); // expression to randomise vallues
@@ -117,15 +115,10 @@ namespace mastermindclone
                         int temporary = rand.Next(1, M + 1); // a tempoary  varaible holding the randomised values
                         stored[i] = temporary; // adding those values to the "stored" array
 
-                    }
-                    for (int i = 0; i < N; i++)
-                    {
-                        Console.Write(stored[i]);
-                    }
-                    Console.WriteLine();
+                    }                  
                     randomise = true;
                 }
-                while (Mvalid = true && Nvalid == true && randomise == true && CodeNotguessed == true)
+                while (Mvalid = true && Nvalid == true && randomise == true && CodeNotguessed == true) 
                 {                   
                     guesses = new int[N];
                     
@@ -168,14 +161,14 @@ namespace mastermindclone
                     if (blackpegs == N) // checking if the number of blackpegs is same amount as the number of positions
                     {
 
-                        Console.WriteLine("Congratulations! your guess is correct!" + Environment.NewLine + "Type exit to end the game"); // displaying a congratulations message if user has guessed code correctly
+                        Console.WriteLine("Congratulations! your guess is correct!" + Environment.NewLine + "Type exit to end the game (Run the code again after play again)"); // displaying a congratulations message if user has guessed code correctly
                         Exitgame = Console.ReadLine(); // reads from the console what the user types after he has guessed the code                       
                     }
                     if (Exitgame == "exit") // user types exit
                     {
                         CodeNotguessed = false; // codenotguessed is set to false as it has been guessed
                         Active = false; // active set to false when exit is type so that the program exits
-                    }                   
+                    }                  
                     else
                     {
                         blackpegs = 0; // if the guessed code is not same as secret code then blackpegs is set to 0 again so user can make another guess
