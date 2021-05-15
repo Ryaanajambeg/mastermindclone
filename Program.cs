@@ -161,7 +161,7 @@ namespace mastermindclone
                     if (blackpegs == N) // checking if the number of blackpegs is same amount as the number of positions
                     {
 
-                        Console.WriteLine("Congratulations! your guess is correct!" + Environment.NewLine + "Type exit to end the game (Run the code again after play again)"); // displaying a congratulations message if user has guessed code correctly
+                        Console.WriteLine("Congratulations! your guess is correct!" + Environment.NewLine + "Type exit to end the game (Run the code again after that to play again)"); // displaying a congratulations message if user has guessed code correctly
                         Exitgame = Console.ReadLine(); // reads from the console what the user types after he has guessed the code                       
                     }
                     if (Exitgame == "exit") // user types exit
